@@ -1,0 +1,568 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="scripts/checkLocked.js"></script>
+        <title>Character</title>
+        <link rel="stylesheet" href="css/loader.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/ability.css" type="text/css">
+        <link rel="stylesheet" href="css/buttons.css" type="text/css">
+        <link rel="stylesheet" href="css/checkbox.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/stats.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/hitdice.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/spells.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/styles.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/misc.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/xp.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/class.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/inventory.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/attacks.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/defaultLayout.css" type="text/css">
+		<link rel="stylesheet" href="css/scrollbar.css" type="text/css">
+    </head>
+    <body>
+        <div id="loadHolder" ><div class="loader"><div></div></div></div>
+        <input type="text" id="CharName" name="charName" style="position:relative; top: -7px;" placeholder="Character Name">
+        <label class="HitDiceShow"><input type="checkbox" id="optionShowUnusedHitDice" checked="true"><span class="CheckBoxLabel">Show Unused Hit Dices</span></label>
+        <button type="button" id="AddClass" style="margin-left: 10px; position:relative; top: -5px;">Add Spellcaster Class</button>
+        <span class="GridSize" style="position:relative; top: -4px; left: 5px">Grid Size: <input type="number" name="snap" id="snapInput" value="1" min="1"></span>
+        <span style="position: relative; top: -4px; left: 5px"><a href="index.php"><button type="button" id="ExitButton">Exit</button></a></span>
+        <div id="abilityContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Abilities</h2>
+            <ul>
+                <li>
+                    <div class="abilityName">Strength</div>
+                    <input id="strAb" type="number" class="ability Str" name="Strength" min="1" max="30" value="10">
+                    <div id="strMod" class="Modifier tooltip"><span>+0</span><span class="tooltiptext">Strength Modifier</span></div>
+                </li>
+                <li>
+                    <div class="abilityName">Dexterity</div>
+                    <input id="dexAb" type="number" class="ability Dex" name="Dexterity" min="1" max="30" value="10">
+                    <div id="dexMod" class="Modifier tooltip"><span>+0</span><span class="tooltiptext">Dexterity Modifier</span></div>
+                    
+                </li>
+                <li>
+                    <div class="abilityName">Constitution</div>
+                    <input id="conAb" type="number" class="ability Con" name="Constitution" min="1" max="30" value="10">
+                    <div id="conMod" class="Modifier tooltip"><span>+0</span><span class="tooltiptext">Constitution Modifier</span></div>
+                    
+                </li>
+                <li>
+                    <div class="abilityName">Intelligence</div>
+                    <input id="intAb" type="number" class="ability Int" name="Intelligence" min="1" max="30" value="10">
+                    <div id="intMod" class="Modifier tooltip"><span>+0</span><span class="tooltiptext">Intelligence Modifier</span></div>
+                </li>
+                <li>
+                    <div class="abilityName">Wisdom</div>
+                    <input id="wisAb" type="number" class="ability Wis" name="Wisdom" min="1" max="30" value="10">
+                    <div id="wisMod" class="Modifier tooltip"><span>+0</span><span class="tooltiptext">Wisdom Modifier</span></div>
+                </li>
+                <li>
+                    <div class="abilityName">Charisma</div>
+                    <input id="chaAb" type="number" class="ability Cha" name="Charisma" min="1" max="30" value="10">
+                    <div id="chaMod" class="Modifier tooltip"><span>+0</span><span class="tooltiptext">Charisma Modifier</span></div>
+                    
+                </li>
+            </ul>
+        </div>
+        <div id="savingThrowContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Saving Throws</h2>
+            <ul>
+                <li><input type="checkbox" class="strMod skill" name="Strength"><span class="CheckBoxLabel"><span>+0 Strength</span></span></li>
+                <li><input type="checkbox" class="dexMod skill" name="Dexterity"><span class="CheckBoxLabel"><span>+0 Dexterity</span></span></li>
+                <li><input type="checkbox" class="conMod skill" name="Constitution"><span class="CheckBoxLabel"><span>+0 Constitution</span></span></li>
+                <li><input type="checkbox" class="intMod skill" name="Intelligence"><span class="CheckBoxLabel"><span>+0 Intelligence</span></span></li>
+                <li><input type="checkbox" class="wisMod skill" name="Wisdom"><span class="CheckBoxLabel"><span>+0 Wisdom</span></span></li>
+                <li><input type="checkbox" class="chaMod skill" name="Charisma"><span class="CheckBoxLabel"><span>+0 Charisma</span></span></li>
+            </ul>
+        </div>
+        <div id="SkillsContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Skills</h2>
+            <ul>
+                <li><input type="checkbox" class="dexMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Acrobatics</span><span class="tooltiptext">Dexterity Modifier</span></span></li>
+                <li><input type="checkbox" class="wisMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Animal Handling</span><span class="tooltiptext">Wisdom Modifier</span></span></li>
+                <li><input type="checkbox" class="intMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Arcana</span><span class="tooltiptext">Intelligence Modifier</span></span></li>
+                <li><input type="checkbox" class="strMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Athletics</span><span class="tooltiptext">Strength Modifier</span></span></li>
+                <li><input type="checkbox" class="chaMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Deception</span><span class="tooltiptext">Charisma Modifier</span></span></li>
+                <li><input type="checkbox" class="intMod skill"><span class="CheckBoxLabel tooltip"><span>+0 History</span><span class="tooltiptext">Intelligence Modifier</span></span></li>
+                <li><input type="checkbox" class="wisMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Insight</span><span class="tooltiptext">Wisdom Modifier</span></span></li>
+                <li><input type="checkbox" class="chaMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Intimidation</span><span class="tooltiptext">Charisma Modifier</span></span></li>
+                <li><input type="checkbox" class="intMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Investigation</span><span class="tooltiptext">Intelligence Modifier</span></span></li>
+                <li><input type="checkbox" class="wisMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Medicine</span><span class="tooltiptext">Wisdom Modifier</span></span></li>
+                <li><input type="checkbox" class="intMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Nature</span><span class="tooltiptext">Intelligence Modifier</span></span></li>
+                <li><input type="checkbox" class="wisMod skill"><span class="CheckBoxLabel tooltip"><span id="perMod">+0 Perception</span><span class="tooltiptext">Wisdom Modifier</span></span></li>
+                <li><input type="checkbox" class="chaMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Performance</span><span class="tooltiptext">Charisma Modifier</span></span></li>
+                <li><input type="checkbox" class="chaMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Persuasion</span><span class="tooltiptext">Charisma Modifier</span></span></li>
+                <li><input type="checkbox" class="intMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Religion</span><span class="tooltiptext">Intelligence Modifier</span></span></li>
+                <li><input type="checkbox" class="dexMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Sleight of Hand</span><span class="tooltiptext">Dexterity Modifier</span></span></li>
+                <li><input type="checkbox" class="dexMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Stealth</span><span class="tooltiptext">Dexterity Modifier</span></span></li>
+                <li><input type="checkbox" class="wisMod skill"><span class="CheckBoxLabel tooltip"><span>+0 Survival</span><span class="tooltiptext">Wisdom Modifier</span></span></li>
+            </ul>
+            
+        </div>
+        <div id="StatsContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Stats</h2>
+            <table>
+                <tr>
+                    <td>
+                        <div class="statName" id="HitPointsStatName">Hit Points</div>
+                        <input id="hp" type="number" class="stat hp" name="HitPoints" value="0">
+                        <span class="tooltip"><input id="maxhp" type="number" class="smallstat maxhp" name="MaxHitPoints" value="0"><span class="tooltiptext" style="top: 25px;">Max Hp</span></span>
+                    </td>
+                    <td>
+                        <div class="statName">Inspiration</div>
+                        <input type="checkbox" class="stat insp" name="Inspiration" id="inspiration">
+                    </td>
+                    <td>
+                        <div class="statName">Armor Class</div>
+                        <input type="number" id="ac" class="stat ac" name="ArmorClass" value="12">
+                    </td>
+                    <td>
+                        <div class="statName" id="SpeedStatName">Speed</div>
+                        <input type="number" class="stat spe" name="Speed" id="speed" value="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="statName">Temporary Hit Points</div>
+                        <input type="number" id="temphp" class="stat temphp" name="TempPoints" value="0" min="0">
+                    </td>
+                    <td>
+                        <div class="statName">Proficiency Bonus</div>
+                        <input type="number" id="Proficiency" class="stat pro" name="Proficiency" value="2">
+                    </td>
+                    <td>
+                        <div class="statName longText">Passive Perception</div>
+                        <span class="tooltip"><div class="stat passper label">12</div><span class="tooltiptext" style="left: 10px; top:0px;">10 + Wisdom Modifier</span></span>
+                    </td>
+                    <td>
+                        <div class="statName" id="InitiativeStatName"><br>Initiative</div>
+                        <span class="tooltip"><div class="stat ini label">12</div><span class="tooltiptext" style="left: 10px; top:0px;">Dexterity Modifier</span></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="DeathSaveContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Death Saves</h2>
+            <table>
+                <tr>
+                    <td><span class="CheckBoxLabel">Successes</span></td>
+                    <td id="deathSaveSuccesses"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td><span class="CheckBoxLabel">Failures</span></td>
+                    <td id="deathSaveFailures"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="PersonalityContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Personality Traits</h2>
+            <textarea id="PersonalityTrait"></textarea>
+            <h3>Ideals</h3>
+            <textarea id="Ideals"></textarea>
+            <h3>Bonds</h3>
+            <textarea id="Bonds"></textarea>
+            <h3>Flaws</h3>
+            <textarea id="Flaws"></textarea>
+        </div>
+        <div id="ProficienciesContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Proficiencies</h2>
+            <textarea id="ProficienciesArea" style="height:150px;"></textarea>
+        </div>
+        <div id="FeaturesContainer" class="Container" style="width: 320px">
+            <input type="checkbox" class="pin">
+            <h2>Features and Traits</h2>
+            <textarea id="Features" style="height:150px; width: 314px"></textarea>
+        </div>
+        <div id="HitDiceContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Hit Dice</h2>
+            <table>
+                    <tr>
+                        <td>
+                            <input type="number" class="currentHitDice" min="0" max="0" value="0">
+                            <span class="tooltip"><input type="number" class="maxHitDice" min="0" value="0"><span class="tooltiptext" style="left: 55px; top: 58px;">Maximum HitDice</span></span>
+                        </td>
+                        <td class="DiceType">
+                            d6
+                        </td>
+                        <td>
+                            <span class="tooltip"><span class="tooltiptext">Constitution Modifier</span><span class="SetModCon">+0</span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" class="currentHitDice" min="0" max="0" value="0">
+                            <span class="tooltip"><input type="number" class="maxHitDice" min="0" value="0"><span class="tooltiptext" style="left: 55px; top: 58px;">Maximum HitDice</span></span>
+                        </td>
+                        <td class="DiceType">
+                            d8
+                        </td>
+                        <td>
+                            <span class="tooltip"><span class="tooltiptext">Constitution Modifier</span><span class="SetModCon">+0</span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" class="currentHitDice" min="0" max="0" value="0">
+                            <span class="tooltip"><input type="number" class="maxHitDice" min="0" value="0"><span class="tooltiptext" style="left: 55px; top: 58px;">Maximum HitDice</span></span>
+                        </td>
+                        <td class="DiceType">
+                            d10
+                        </td>
+                        <td>
+                            <span class="tooltip"><span class="tooltiptext">Constitution Modifier</span><span class="SetModCon">+0</span></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" class="currentHitDice" min="0" max="0" value="0">
+                            <span class="tooltip"><input type="number" class="maxHitDice" min="0" value="0"><span class="tooltiptext" style="left: 55px; top: 58px;">Maximum HitDice</span></span>
+                        </td>
+                        <td class="DiceType">
+                            d12
+                        </td>
+                        <td>
+                            <span class="tooltip"><span class="tooltiptext">Constitution Modifier</span><span class="SetModCon">+0</span></span>
+                        </td>
+                    </tr>
+            </table>
+            </ul>
+        </div>
+        <div id="DescriptionContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Description</h2>
+            <textarea id="Description" style="height:150px;"></textarea>
+        </div>
+        <div id="BackgroundContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Background</h2>
+            <textarea id="Background" style="height:235px;"></textarea>
+        </div>
+        <div id="NotesContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Notes</h2>
+            <textarea id="Notes" style="height:45px;"></textarea>
+        </div>
+        <div id="ExperienceContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2 id="XpValue">Experience 0xp</h2>
+            <table>
+            <tr>
+                <th>Event</th>
+                <th>XP</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th><input type="text" id="XpEventInput"></th>
+                <th><input type="number" min="0" id="AddXpInput"></th>
+                <th><button type="button" class="AddButton AddXp"></button></th>
+            </tr>
+            </table>
+        </div>
+
+        <div id="PictureContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Avatar</h2>
+            <label for="avatarButton"><img id="avatarImg" /></label>
+            <input type="file" style="display: none" accept="image/*" id="avatarButton">
+        </div>
+
+        <div id="ClassContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Class &amp; Level</h2>
+            <table>
+            <tr>
+                <th>Class</th>
+                <th>Level</th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <th><input type="text" id="ClassNameInput"></th>
+                <th><input type="number" min="0" id="ClassLevelInput"></th>
+                <th><button type="button" class="AddButton AddLevel"></button></th>
+            </tr>
+            </table>
+        </div>
+
+        <div id="InventoryContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Inventory 0/150 lb.</h2>
+            <ul>
+                
+            </ul>
+            <button type="button" id="AddItemButton">Item Creator</button><button type="button" id="EditGroupsButton">Edit Groups</button>
+            <div id="AddItemContainer" hidden>
+                <label>Name <input type="text" class="AddItemInput" id="ItemNameInput" min="0"></label><br>
+                <label>Quantity <input type="number" class="AddItemInput"  id="ItemQuantityInput" min="0" value="0"></label><br>
+                <label>Value <input type="text" class="AddItemInput"  id="ItemValueInput" min="0" placeholder="12gp 30sp ect."></label><br>
+                <label>Weight <input type="number" class="AddItemInput"  id="ItemWeightInput" min="0" value="0"></label><br>
+                <label>Rarity <select  class="AddItemInput" id="ItemRarityInput">
+                    <option>Common</option>
+                    <option>Uncommon</option>
+                    <option>Rare</option>
+                    <option>Epic</option>
+                    <option>Legendary</option>
+                    <option>Unique</option>
+                </select></label><br>
+                <label>Group <select  class="AddItemInput" id="ItemGroupInput">
+                </select></label><br>
+                <label>Description<br><textarea id="ItemDescriptionInput"></textarea></label><br>
+                <button type="button" id="AddItem">Add</button>
+                <button type="button" id="ResetButton">Reset</button>
+            </div>
+            <div id="EditGroupsContainer" hidden>
+                <label>Name <input type="text" class="AddItemGroupinput" id="ItemGroupNameInput" maxlength="18"></label>
+                <span class="tooltip"><button type="button" id="AddItemGroup">Add Group</button><br>
+                <label><select id="ItemGroups">
+                </select></label>
+                <button type="button" id="DeleteItemGroup">Delete Group</button><br>
+
+            </div>
+        </div>
+
+        <div id="AttackContainer" class="Container">
+            <input type="checkbox" class="pin">
+            <h2>Attacks</h2>
+            <table>
+                <tr>
+                    <th>
+                        Attack
+                    </th>
+                    <th>
+                        Bonus
+                    </th>
+                    <th>
+                        Damage
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </table>
+            <button class="AddButton" id="AddAttack" type="button"></button><br>
+            <textarea class="AttackArea"></textarea>
+        </div>
+
+        <div style="display: none;">
+            <li id="SpellPrefab" class="tooltip">
+                <span class="Spell"><input type="checkbox" class="SpellPrepared"><input type="text" class="SpellName"><button class="RemoveButton RemoveSpell CheckBoxLabel" type="button"></button></span>
+                <textarea class="SpellDescription"></textarea>
+                <span class="tooltiptext" style="width: 200px; top:33px; display: none"></span>
+            </li>
+
+
+            <div id="SpellCasterContainerPrefab" class="SpellContainer Container" style="width: 470px; position: absolute; left: 50px; top: 50px;">
+                <input type="checkbox" class="pin">
+                <button type="button" class="RemoveButton RemoveClass"></button>
+                <h2>Spellcasting</h2>
+                <div>
+                    <table class="SpellHeaders">
+                        <tr>
+                            <td>
+                                Spellcasting Ability
+                            </td>
+                            <td>
+                                Spell Save DC
+                            </td>
+                            <td>
+                                Spell Attack Bonus
+                            </td>
+                            <td>
+                                Max Prepared Spells
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="SpellCastingAbility">
+                                    <option value="strMod">Strength</option>
+                                    <option value="dexMod">Dexterity</option>
+                                    <option value="conMod">Constitution</option>
+                                    <option value="intMod">Intelligence</option>
+                                    <option value="wisMod">Wisdom</option>
+                                    <option value="chaMod">Charisma</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div class="SpellSaveDc tooltip"><span>10</span><span class="tooltiptext" style="left: 60px;">8 + Ability Modifier + Proficiency Modifier</span></div>
+                            </td>
+                            <td>
+                                <div class="SpellAttackBonus tooltip"><span>2</span><span class="tooltiptext" style="left: 60px;">Ability Modifier + Proficiency Modifier</span></div>
+                            </td>
+                            <td>
+                                <input type="number" class="MaxPreparedSpells" min="0">
+                            </td>
+                        </tr>
+                    </table>
+                    <label><input type="checkbox" class="ShowSpells" checked><span class="CheckBoxLabel">Show Spell List</span></label>
+                    <label><input type="checkbox" class="EditSpellDescription" checked><span class="CheckBoxLabel">Show Spell Editor</span></label>
+                    <label><input type="checkbox" class="HideEmptyLevels" checked><span class="CheckBoxLabel">Show Empty Levels</span></label>
+                    <div class="SpellList">
+                        <div>
+                                    <h3>Cantrips</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                        </div>
+                        <div>
+                                    <h3>Level 1</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 2</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 3</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 4</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 5</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 6</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 7</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 8</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                                </div>
+                                <div>
+                                    <h3>Level 9</h3>
+                                    <div>
+                                        <span>Total <input type="number" class="SlotTotal" min="0" value="0"></span>
+                                        <span>Expended <input type="number" class="SlotExpended" min="0" value="0" max="0"></span>
+                                    </div>
+                                    <ul>
+                                    </ul>
+                                    <button class="AddButton AddSpell" type="button"></button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <table>
+            <tr id="XpGainPrefab" class="XpRow">
+                    <td class="XpEvent"></td>
+                    <td class="XpValue"></td>
+                    <td><button type="button" class="RemoveButton RemoveXp"></button></td>
+            </tr>
+
+            <tr id="ClassPrefab" class="ClassRow">
+                    <td class="ClassName">Barbarian</td>
+                    <td><input type="number" min="0" class="AddedClassLevelInput"></td>
+                    <td><button type="button" class="RemoveButton RemoveLevel"></button></td>
+            </tr>
+
+
+            <tr class="InventoryItem" id="ItemPrefab">
+                <td><input type="number" class="ItemQuantity" value="0" min="0"></td>
+                <td class="tooltip" style="width: 100%"><span class="ItemName"></span><span class="tooltiptext" style="width: 170px; top:35px;"><div class="ItemValue"></div><div class="ItemWeight"></div><div class="Description"></div></span></td>
+                <td><button type="button" class="UpButton"></button></td>
+                <td><button type="button" class="DownButton"></button></td>
+                <td><button type="button" class="RemoveButton RemoveItem"></button></td>
+                <td></td>
+            </tr>
+
+            <tr id="AttackPrefab" class="AttackItem">
+                    <td><input type="text" class="AttackName"></td>
+                    <td><span class="tooltip"><input type="text" class="AttackBonus" value="+0"><span class="tooltiptext"></span></span></td>
+                    <td><input type="text" class="AttackDamage"></td>
+                    <td><input type="text" class="AttackType"></td>
+                    <td><button type="button" class="RemoveButton RemoveAttack"></td>
+                </tr>
+
+            </table>
+            <li id="InventoryGroupPrefab" class="InventoryGroup">
+                <label><input type="checkbox" class="InventoryFoldout"><span class="CheckBoxLabel InventoryGroupName"></span></label>
+                <span class="tooltip WeightTooltip"><input type="checkbox" class="AddToWeightCarried"><span class="tooltiptext" style="left: 23px; top:28px;">Add to weight carried</span></span>  
+                
+                <span><button type="button" class="UpButton GroupButton"></button></span>
+                <span><button type="button" class="DownButton GroupButton"></button></span>
+                <table>
+                </table>
+            </li>
+        </div>
+    </body>
+    <script type="text/javascript" src="scripts/charsheet/moveGroups.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/ability.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/skill.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/stats.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/hitdice.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/spells.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/avatar.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/class.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/xp.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/attacks.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/inventory.js"></script>
+    <script type="text/javascript" src="scripts/charsheet/save.js"></script>
+</html>

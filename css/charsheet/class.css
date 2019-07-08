@@ -1,0 +1,26 @@
+
+#ClassNameInput, .ClassName {
+	width: 100px;
+}
+#ClassLevelInput {
+	width: 50px;
+}
+.AddedClassLevelInput {
+	width: 30px;
+	text-align: center;
+	-webkit-appearance: none;
+	border: none;
+	padding-left: 20px;
+}
+.RemoveLevel {
+	display: none;
+}
+.ClassRow:hover .RemoveLevel {
+	display: initial;
+}
+.ClassRow {
+	height: 25px;
+}
+#AddClass {
+	width: auto;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/checkLocked.js"></script>
+		<title>D&amp;D - NPC</title>
+        <link rel="stylesheet" href="css/loader.css" type="text/css">
+        <link rel="stylesheet" href="css/npc/topnav.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/styles.css" type="text/css">
+        <link rel="stylesheet" href="css/charsheet/misc.css" type="text/css">
+        <link rel="stylesheet" href="css/buttons.css" type="text/css">
+        <link rel="stylesheet" href="css/checkbox.css" type="text/css">
+        <link rel="stylesheet" href="css/npc/containers.css" type="text/css">
+		<link rel="stylesheet" href="css/scrollbar.css" type="text/css">
+	</head>
+	<body>
+        <div id="loadHolder" style="visibility: hidden;" ><div class="loader"><div></div></div></div>
+		<div class="topnav" style="visibility:hidden;">
+			<a id="change_Mode" style="font-weight: bold" href="#">Move Mode</a>
+			<a id="set_Visibility" href="#">Hide NPC</a>
+			<a id="set_Name" href="#">Change Name</a>
+			<a id="set_Description" href="#">Change Description</a>
+			<label for="avatar">Change Avatar</label>
+            <input type="file" style="display: none" accept="image/*" id="avatar">
+			<a id="add_list" href="#">Add List</a>
+			<a id="add_txtbox" href="#">Add Textbox</a>
+			<a id="add_img" href="#">Add Image</a>
+			<a id="show_Preview" href="#">Show Preview</a>
+			<a id="editTitles" class="toggle" href="#">Edit Titles</a>
+			<span class="GridSize" style="color: white">Grid Size:</span>
+			<input style="width: 50px;" type="number" name="snap" id="snapInput" value="1" min="1">
+		</div>
+		<div class="Container TextAreaContainer" id="textAreaPrefab" hidden>
+			<input type="checkbox" class="show" checked>
+			<input type="checkbox" class="pin">
+			<h2 class="titleHolder" style="margin-bottom: 0px"><input class="titleInput" type="text"></h2>
+			<textarea class="textAreaDiv" style="width: 220px; height: 130px"></textarea>
+		</div>
+		<div class="Container ImageContainer" id="imagePrefab" hidden>
+			<input type="checkbox" class="show" checked>
+			<input type="checkbox" class="pin">
+			<h2 class="titleHolder" style="margin-bottom: 0px"><input class="titleInput" type="text"></h2>
+            <label for="prefab_image" class="imageLabel"><img class="image" /></label>
+            <input type="file" style="display: none" accept="image/*" id="prefab_image">
+		</div>
+		<div class="Container ListContainer" id="listPrefab" hidden>
+			<input type="checkbox" class="show" checked>
+			<input type="checkbox" class="pin">
+			<h2 class="titleHolder" style="margin-bottom: 0px"><input class="titleInput" type="text"></h2>
+			<div class="list_Holder" style="width: 350px">
+				<table>
+					<tr>
+						<td></td>
+						<td><button type="button" class="AddButton newLine"></button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<table class="prefabs" hidden>
+			<tr class="list_Element">
+				<td><input class="list_Title" type="text"></td>
+				<td><input class="list_Value" type="text"></td>
+			</tr>
+		</table>
+	</body>
+    <script type="text/javascript" src="scripts/charsheet/moveGroups.js"></script>
+    <script type="text/javascript" src="scripts/npc/save.js"></script>
+    <script type="text/javascript" src="scripts/npc/menu.js"></script>
+</html>

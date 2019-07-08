@@ -1,0 +1,42 @@
+#AttackContainer {
+	width: 400px;
+}
+#AttackContainer table {
+	width: 100%;
+}
+#AttackContainer table tr {
+	text-align: center;
+}
+#AddAttack {
+	margin-left: 10px;
+}
+
+.AttackName {
+	text-align: center;
+	width: 100px;
+}
+.AttackBonus {
+	text-align: center;
+	width: 40px;
+}
+.AttackBonus:focus {
+	text-align: left;
+	width: 150px;
+	left: -50px;
+	top: 2px;
+	position:absolute;
+	border: black 1px solid;
+	border-radius: 2px;
+}
+.AttackDamage {
+	text-align: center;
+	width: 120px;
+}
+.AttackType {
+	text-align: center;
+	width: 75px;
+}
+.AttackArea {
+	width: 98%;
+	margin: 1%;
+}

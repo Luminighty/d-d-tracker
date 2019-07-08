@@ -1,0 +1,87 @@
+#abilityContainer {
+	position: absolute;
+	left: 0px;
+	top: 30px;
+}
+#savingThrowContainer {
+	position: absolute;
+	left: 125px;
+	top: 30px;
+}
+#SkillsContainer {
+	position: absolute;
+	left: 125px;
+	top: 250px;
+}
+#StatsContainer {
+	position: absolute;
+	left: 340px;
+	top: 30px;
+}
+#DeathSaveContainer {
+	position: absolute;
+	left: 335px;
+	top: 510px;
+}
+#PersonalityContainer {
+	position: absolute;
+	left: 680px;
+	top: 310px;
+}
+#ProficienciesContainer {
+	position: absolute;
+	left: 680px;
+	top: 640px;
+}
+#FeaturesContainer {
+	position: absolute;
+	left: 340px;
+	top: 310px;
+}
+#HitDiceContainer {
+	position: absolute;
+	left: 505px;
+	top: 510px;
+}
+#NotesContainer {
+	position: absolute;
+	left: 1200px;
+	top: 220px;
+}
+#DescriptionContainer {
+	position: absolute;
+	left: 1200px;
+	top: 30px;
+}
+#ClassContainer {
+	position: absolute;
+	left: 310px;
+	top: 785px;
+}
+#ExperienceContainer {
+	position: absolute;
+	left: 0px;
+	top: 785px;
+	
+}
+#BackgroundContainer {
+	position: absolute;
+	left: 1200px;
+	top: 310px;
+}
+#InventoryContainer {
+	position: absolute;
+	left: 890px;
+	top: 310px;
+}
+#AttackContainer {
+	position: absolute;
+	left: 780px;
+	top: 30px;
+}
+#PictureContainer {
+	resize: both;
+	position: absolute;
+	left: 1410px;
+	top: 30px;
+}

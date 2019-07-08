@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	user-select: none;
+}
+
+.topnav {
+	position: fixed;
+	z-index: 500;
+	top: 0;
+	left: 0;
+	width: 100%;
+    background-color: #111;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+.topnav a, .topnav label {
+	text-decoration: none;
+    color: white;
+	padding: 0px 16px;
+    text-decoration: none;
+    display: inline;
+}
+
+.topnav a:hover, .topnav label:hover {
+    background-color: rgb(218, 218, 218);
+    color: black;
+}
+.topnav a:active, .topnav label:active {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.DeleteCursor, .DeleteCursor *  {
+    cursor: url("../../media/deleteCursor.png"), pointer !important;
+}

@@ -1,0 +1,39 @@
+#HitDiceContainer {
+	width: 160px;
+}#HitDiceContainer table {
+	margin-bottom: 10px;
+}
+.currentHitDice {
+	-webkit-appearance: none;
+	border: none;
+	width: 55px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	text-align: right;
+	padding-bottom: 15px;
+	margin: 15px 0px 0px 5px;
+}
+.DiceType {
+	width: 40px;
+	font-size: 20px;
+}
+.maxHitDice {
+	-webkit-appearance: none;
+	border: black 2px solid;
+	border-radius: 10px;
+	width: 40px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: right;
+	position: absolute;
+	left: 18px;
+	top: 35px;
+}
+.HitDiceShow, .GridSize {
+	color: white;
+}
+.HitDiceShow input[type="checkbox"] {
+	background-color: white;
+}

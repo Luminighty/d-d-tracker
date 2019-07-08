@@ -1,0 +1,149 @@
+
+input[class="InventoryFoldout"] {
+	border:none;
+    background-size: contain;
+	background-image: url("../../media/foldout_Closed.png");
+}
+input[class="InventoryFoldout"]:checked {
+	background-image: url("../../media/foldout_Open.png");
+}
+#InventoryContainer {
+	width: 300px;
+}
+.InventoryGroupName {
+	font-weight: bold;
+    user-select: none;
+	text-align: left;
+	background-color: white;
+	color: black;
+	display: inline;
+}
+#InventoryContainer ul {
+	padding-left: 0px;
+}
+.InventoryGroup table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.InventoryGroup {
+	border: black 1px solid;
+	border-radius: 7px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.ItemQuantity {
+	width: 55px;
+}
+.ItemName {
+	width: 250px;
+}
+.RemoveItem, .UpButton, .DownButton {
+	visibility: hidden;
+}
+.InventoryItem {
+	width: 350px;
+	height: 30px;
+}
+.InventoryItem:hover .RemoveItem, .InventoryItem:hover .DownButton, .InventoryItem:hover .UpButton {
+	visibility: visible;
+}
+.InventoryGroup:hover .GroupButton {
+	visibility: visible;
+}
+.ItemQuantity {
+	border:none;
+	text-align: center;
+}
+.WeightTooltip {
+	float: right;
+}
+.GroupButton {
+	margin-top: 2px;
+	margin-left: 5px;
+	float: right;
+}
+.ItemGroupValue {
+	text-align: right;
+}
+td {
+	background-color: white;
+}
+.common {
+	color: black;
+}
+.uncommon {
+	font-weight: bold;
+	color: green;
+}
+.rare {
+	font-weight: bold;
+	color: blue;
+}
+.epic {
+	font-weight: bold;
+	color: purple;
+}
+.legendary {
+	font-weight: bold;
+	color: goldenrod;
+}
+.unique {
+	font-weight: bold;
+	color: rgb(218, 53, 144);
+}
+
+
+
+#AddItemButton {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	width: auto;
+}
+#EditGroupsButton {
+	width: auto;
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#ResetButton {
+	width: auto;
+	margin-left: 10px;
+	top: -20px;
+}
+#AddItem {
+	margin-left: 10px;
+	width: auto;
+}
+#ItemDescriptionInput {
+	border: 1px gray solid;
+	border-radius: 2px;
+	width: 294px;
+}
+#AddItemContainer label {
+	line-height: 27px;
+	margin: 10px;
+}
+.AddItemInput {
+	float:right;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+#AddItemGroup, #DeleteItemGroup {
+	width: 96px;
+	float: right;
+	margin-right: 10px;
+}
+.AddItemGroupinput {
+	margin-bottom: 10px;
+	width: 130px;
+}
+#EditGroupsContainer  {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#AddItemContainer  {
+	margin-bottom: 10px;
+}
+#EditGroupsContainer label {
+	margin-left: 10px;
+}

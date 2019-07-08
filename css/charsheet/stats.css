@@ -1,0 +1,62 @@
+.stat {
+	display: block;
+    width: 60px;
+	line-height: 42px;
+    font-size: 40px;
+    text-align: center;
+    -webkit-appearance: none;
+    border: white;
+	padding: 0px 0px 0px 15px;
+	margin-left: 5px;
+}
+.label {
+	padding: 0px;
+	margin-left: 10px;
+}
+.smallstat {
+	background-color: white;
+	border: 2px black solid;
+	border-radius: 15px;
+	width: 38px;
+	position: relative;
+	left: -1px;
+	top: 0px;
+	padding: 0px 0px 0px 18px;
+}
+.statName {
+	margin-top: -10px;
+	font-size: 18px;
+}
+#InitiativeStatName {
+	margin-top: -20px;
+}
+#SpeedStatName, #HitPointsStatName {
+	margin-top: 0px;
+}
+#StatsContainer table tr td {
+	border: 1px black solid;
+	border-radius: 10px;
+	width: 92px;
+	height: 75px;
+	text-align: center;
+	margin: 5px;
+	margin-bottom: 20px;
+	padding: 10px 0px 0px 0px;
+	display: inline-block;
+}
+#StatsContainer ul {
+	display: inline;
+}
+#StatsContainer ul {
+	-webkit-padding-start: 5px;
+}
+#StatsContainer {
+	width: 420px;
+}
+
+#DeathSaveContainer {
+	width: 160px;
+}
+#DeathSaveContainer table tr td {
+	text-align: right;
+}

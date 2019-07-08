@@ -1,0 +1,20 @@
+{
+	"id": 1,
+	"updates": [
+		{
+			"title": "Update #1: Updates!",
+			"date": "2018 Jul 16",
+			"description": "
+				<p>That's right, updates are here after the long wait. These messages will show up every now and then letting you know the updates, changes and bug fixes I make. 'Why would I care about that' you ask? Why wouldn't you? They're just <strong>sooo</strong> good.</p>
+				<p>New Features:</p>
+				<ul>
+					<li>
+						<div style='font-weight: bold'>Updates</div>
+						<div style='padding-left: 20px; font-size: 0.8em'>It's what you're reading now...<br>Nothing too exciting</div>
+					</li>
+				</ul>
+				<div style='font-size: 0.55em;opacity: 0.15;text-align: center;'>(Shh, it's a secret to everybody, but dungeon master screen is coming soon...)</div>
+				"
+		}
+	]
+}

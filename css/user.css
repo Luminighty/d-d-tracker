@@ -1,0 +1,311 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+	height: 95%;
+    margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+html {
+	height: 100%;
+	
+	background-attachment: fixed;
+    background-repeat: no-repeat;
+	background-size: cover;
+	user-select: none;
+}
+
+/* Style the side navigation */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Side navigation links */
+.sidenav a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.sidenav h1 {
+    padding: 16px;
+	font-size: 1.2em;
+	color: white;
+    display: block;
+}
+
+.sidenav .bottom {
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
+}
+
+.sidenav .active {
+	background-color: rgb(63, 63, 63);
+}
+
+/* Style the content */
+.content {
+	position: relative;
+    margin-left: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    animation-name: appear;
+    animation-duration: 0.4s
+}
+@keyframes appear {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
+h2 {
+	text-align: center;
+}
+h3 {
+	text-align: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+	width: 100%;
+}
+tr, td {
+	padding: 15px 2px;
+	margin-bottom: 10px;
+}
+tr.Hover:not(.completedQuest):hover {
+	background-color:lightgray;
+}
+tr.Clickable:active {
+	background-color:gray;
+}
+tr.Clickable:hover {
+    cursor: pointer;
+}
+.CharElement:hover, .NpcElement:hover {
+    cursor: pointer;
+}
+.CharacterButton .image, .CharacterButton .npc_Img  {
+	height: 100px;
+	width: auto;
+	max-width: 100px;
+	background-size: auto;
+	padding: 0px 0px;
+}
+.CharacterButton .image img, .CharacterButton .npc_Img img  {
+	width: auto;
+	height: 100%;
+	margin: auto;
+	display: block;
+}
+.CharacterButton .Buttons {
+	height: 50px;
+	width: 50px;
+	margin: auto;
+	padding: 0px 10px 0px 0px;
+}
+.charCreate, .npcCreate,  #questCreator {
+	background-color: #2e9410;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	font-weight: bold;
+	outline: none;
+}
+
+.charCreate:hover, .npcCreate:hover,  #questCreator:hover {
+	background-color: #1f880a;
+}
+.charCreate:active, .npcCreate:active,  #questCreator:active {
+	background-color: #047904;
+}
+.charCreate:focus, .npcCreate:focus,  #questCreator:focus {
+    box-shadow: #047904 0px 0px 5px;
+}
+
+
+.removeButton {
+	height: 50px;
+	width: 50px;
+	border: 2px black solid;
+	border-radius: 5px;
+	background-color: white;
+	background-image: url("../media/trashClosed.png");
+	background-size: contain;
+	margin: 0px 10px;
+	text-align: center;
+	padding: 0px ;
+}
+button:focus {
+	outline: none;
+}
+.removeButton:hover {
+    cursor: pointer;
+	background-color: rgb(214, 173, 173);
+	background-image: url("../media/trashOpen.png");
+}
+.removeButton:active {
+    cursor: pointer;
+	background-color: rgb(218, 19, 19);
+	background-image: url("../media/trashOpen.png");
+}
+.editButton {
+	text-align: center;
+	height: 50px;
+	width: 50px;
+	border: 2px black solid;
+	border-radius: 5px;
+	background-color: white;
+	background-image: url("../media/edit0.png");
+	background-size: contain;
+	margin: 0px 10px;
+	padding: 0px;
+}
+.editButton:hover {
+    cursor: pointer;
+	background-color: rgb(209, 255, 212);
+	background-image: url("../media/edit1.png");
+}
+.editButton:active {
+    cursor: pointer;
+	background-color: rgb(138, 255, 148);
+	background-image: url("../media/edit1.png");
+}
+
+.CharacterButton .Name {
+	font-size: 1.3em;
+	padding-left: 20px;
+	width: 80%;
+}
+.NpcElement .npc_Name {
+	font-size: 1.3em;
+	padding-left: 20px;
+	width: 20%;
+}
+.NpcElement .npc_Desc {
+	font-size: 1em;
+	padding-left: 20px;
+	width: 60%;
+}
+
+.questDm, .questTitle {
+	text-align: center;
+}
+.questTitle {
+	font-weight: bold;
+}
+
+.npc_Name {
+	font-weight: bold;
+	text-align: left;
+}
+.npc_Img img {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.noquests {
+	text-align: center;
+	
+}
+
+.completedQuest {
+	color: rgb(150, 150, 150);
+}
+.questTable table {
+	border-collapse: collapse;
+	empty-cells: show;
+}
+.questTable td {
+	padding-right: 20px;
+  	padding-left: 20px;
+	position: relative;
+}
+.questTable tr.completedQuest td:before {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	border-bottom: 1px solid #111;
+	width: 100%;
+}
+.questTable tr.completedQuest td:after {
+  content: "\00B7";
+  font-size: 1px;
+}
+
+@media screen and (max-width: 550px) {
+	* {
+    box-sizing: initial;
+	}
+	.sidenav {
+		text-align: center;
+		height: 51px;
+		width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	.sidenav a {
+		font-size: 0.7em;
+		display: inline;
+		position: relative;
+		font-size: 0.7em;
+		padding: 5px 2px;
+		top: 30%;
+	}
+	.sidenav .bottom {
+		display: inline;
+		position: relative;
+	}
+
+	.sidenav h1 {
+		display: none;
+	}
+
+	.content {
+		margin-left: 0px;
+		margin-top: 50px;
+		padding-top: 20px;
+	}
+	
+
+}
+
+.alertError {
+	display: inline-block;
+	position: relative;
+	animation-name: shake;
+	animation-duration: 0.3s;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

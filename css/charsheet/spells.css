@@ -1,0 +1,54 @@
+.SpellHeaders {
+	margin: auto;
+	text-align: center;
+}
+.SpellHeaders tr td {
+	width: 100px;
+}
+.SpellList div {
+	vertical-align: top;
+	display: inline-block;
+	width: 230px;
+	padding-left: 3px;
+}
+.SpellList tr td ul {
+	margin-bottom: 0px;
+}
+.MaxPreparedSpells {
+	width:50px;
+}
+.SlotExpended {
+	width: 50px;
+	line-height: 30px;
+	font-size: 30px;
+}
+.SlotTotal {
+	width: 50px;
+	line-height: 30px;
+	font-size: 30px;
+}
+.Spell {
+	margin-left: -20px;
+	display: inline;
+	margin-right: 13px;
+}
+
+.SpellName {
+	display: inline-block;
+    top: -7px;
+    left: 0px;
+	position: relative;
+	border:none;
+	border-bottom: 1px solid black;
+}
+.SpellDescription {
+	resize: vertical;
+	border: black 1px solid;
+	margin-left: -20px;
+	width: 220px;
+	position: relative;
+}
+.RemoveClass {
+	position: absolute;
+	right: 0px;
+}

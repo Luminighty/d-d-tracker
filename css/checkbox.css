@@ -1,0 +1,31 @@
+
+input[type=checkbox]:checked {
+	background-image: url("../media/check.png");
+    background-size: contain;
+}
+input[type=checkbox] {
+	border: 2px solid black;
+	border-radius: 2px;
+	-webkit-appearance: none;
+	height: 16px;
+	width: 16px;
+}
+input[type=checkbox]:focus {
+	outline: none;
+}
+input[type=checkbox]:hover {
+	background-color: lightgrey;
+}
+input[type=checkbox]:active {
+	background-color: rgb(180, 180, 180);
+}
+.CheckBoxLabel {
+	display: inline-block;
+    top: -4px;
+    left: 5px;
+    position: relative;
+    user-select: none;
+}
+input[class="pin"]:checked {
+	background-image: url("../media/lock.png");
+}

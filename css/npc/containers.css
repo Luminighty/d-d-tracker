@@ -1,0 +1,78 @@
+.Container {
+	resize: both;
+	width: auto;
+	min-width: 100px;
+	min-height: 100px;
+	position: absolute;
+}
+textarea {
+	resize: both;
+	width: 200px;
+	min-width: 200px;
+	min-height: 100px;
+	margin-right: 2px;
+}
+.titleInput {
+	-webkit-appearance: none;
+	border: 1px white dotted;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	width: 70%;
+	cursor: text;
+}
+h2 {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	height: 22px;
+}
+input[class="show"] {
+	position: absolute;
+	right: 5px;
+	background-color: white;
+	background-image: url("../../media/hidden.png");
+}
+input[class="show"]:checked {
+	background-image: url("../../media/shown.png");
+}
+.Container table tr {
+	width: 50%;
+}
+.Container table {
+	width: 100%;
+}
+.list_Title, .list_Value {
+	width: 95%;
+	margin: auto;
+}
+.list_Title {
+	font-weight: bold;
+}
+.list_Holder {
+	resize: horizontal;
+	width: auto;
+	overflow: auto;
+	min-width: 200px;
+}
+.ImageContainer img {
+	max-height: 100%;
+	max-width: 100%;
+	min-width: 100px;
+	min-height: 100px;
+	width: auto;
+	overflow: hidden;
+}
+.ImageContainer  {
+	overflow: hidden;
+	margin-bottom: 10px;
+	width: 130px;
+	min-width: 170px;
+	min-height: 85px;
+}
+.textAreaDiv {
+	font-size: 14px;
+	padding: 2px;
+	margin-right: 2px;
+}

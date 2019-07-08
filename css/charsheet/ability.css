@@ -1,0 +1,39 @@
+.ability {
+	display: block;
+    width: 60px;
+	line-height: 50px;
+    font-size: 40px;
+    text-align: center;
+    -webkit-appearance: none;
+    border: white;
+	padding: 0px 0px 0px 15px;
+	margin-left: 5px;
+}
+.abilityName {
+	font-size: 16px;
+}
+#abilityContainer ul li {
+	border: 1px black solid;
+	border-radius: 10px;
+	width: 92px;
+	height: 75px;
+	text-align: center;
+	margin: 5px;
+	margin-bottom: 20px;
+	padding: 10px 0px 0px 0px;
+}
+#abilityContainer ul {
+	-webkit-padding-start: 5px;
+}
+#abilityContainer {
+	width: 115px;
+}
+.Modifier {
+	background-color: white;
+	border: 2px black solid;
+	border-radius: 15px;
+	width: 46px;
+	position: relative;
+	left: 20px;
+	top: -5px;
+}

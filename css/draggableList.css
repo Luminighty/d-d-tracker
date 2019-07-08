@@ -1,0 +1,27 @@
+.listHolder {
+	border: 1px solid black;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+.listElement {
+	text-align: center;
+	padding: 10px 5px;
+	user-select: none;
+	cursor: pointer;
+}
+.listElement.active {
+	background-color: rgb(211, 211, 211);
+}
+.listElement:hover {
+	background-color: rgb(189, 189, 189);
+}
+.draggable.listElement:hover {
+	background-image: url("../media/reorder.png");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.insertBeforeDraggableListElement {
+	margin-top: 30px;
+}

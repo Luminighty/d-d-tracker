@@ -1,0 +1,58 @@
+#PersonalityContainer h2, #BackgroundContainer h2,#NotesContainer h2,#DescriptionContainer h2,#HitDiceContainer h2,#ProficienciesContainer h2,#FeaturesContainer h2 {
+	margin: 0px;
+}#PersonalityContainer textarea, #BackgroundContainer textarea,#ProficienciesContainer textarea,#FeaturesContainer textarea {
+	background-color: transparent;
+}
+#inspiration {
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+}
+#inspiration:checked {
+	background-image: url("../../media/bigcheck.png");
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+#ExitButton {
+	width: 75px;
+}
+#PictureContainer img {
+	max-height: 100%;
+	max-width: 100%;
+	min-width: 100px;
+	min-height: 100px;
+	width: auto;
+	overflow: hidden;
+}
+#PictureContainer  {
+	overflow: hidden;
+	margin-bottom: 10px;
+	width: 130px;
+	min-width: 100px;
+	min-height: 85px;
+}
+#PictureContainer h2 {
+	margin-bottom: 0px;
+}
+.guest {
+    position: fixed;
+    bottom: 0px;
+    color: white;
+    right: 0px;
+    background-color: #ff0000cc;
+    z-index: 5000;
+    text-align: center;
+    padding: 20px 50px;
+    margin: auto;
+    font-size: 28px;
+    font-weight: bold;
+}
+.guest:hover {
+    background-color: #b70000fa;
+    cursor: pointer;
+}
+.guest:active {
+    background-color: #630000;
+}

@@ -1,0 +1,21 @@
+#ExperienceContainer {
+	width: 300px;
+}
+#XpEventInput {
+	width: 200px;
+}
+#AddXpInput {
+	width: 50px;
+}
+.XpValue {
+	text-align: center;
+}
+.RemoveXp {
+	display: none;
+}
+.XpRow:hover .RemoveXp {
+	display: initial;
+}
+.XpRow {
+	height: 25px;
+}

@@ -1,0 +1,152 @@
+.dmElement {
+	border: 1px solid black;
+	display: inline-grid;
+}
+
+/*
+	Perceptions
+*/
+
+.PerceptionList, .dmElement.Initiatives {
+	width: 30%;
+	min-width: 200px;
+}
+.PerceptionList * td {
+	padding: 5px 10px;
+}
+.PerceptionList * {
+	width: 100%;
+}
+.perceptionValue {
+	text-align: center;
+}
+
+.buttonHolder {
+	min-width: 50px;
+}
+.buttonHolder * {
+	padding: 0px;
+	margin: 0px;
+}
+
+/*
+	Session Chars
+*/
+#sessionCharModalList {
+	border: none;
+	height: 50%;
+	overflow-y: auto;
+}
+#sessionCharModalList .listElement:hover {
+    cursor: pointer;
+	background-color: lightgray;
+}
+#sessionCharModalList .listElement.active {
+	font-weight: bold;
+	background-color: rgb(234, 234, 234);
+}
+#sessionCharModalList .listElement.active:hover {
+	background-color: lightgray;
+}
+
+
+/*
+	Initiative
+*/
+
+.iniPickButton {
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	margin: 5px auto;
+}
+
+.iniPickHolder.listHolder,.iniPickedHolder.listHolder {
+	height: 40vh;
+	width: 25vw;
+	margin: auto;
+}
+#iniNpcPickInput {
+	width: 90%;
+}
+.dmElement.Initiatives .listHolder {
+	border: none;
+	overflow: auto;
+}
+
+#DmMenu {
+	display: block;
+	margin-bottom: 10px;
+}
+#DmMenu * {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 3px 3px;
+	background-color: rgb(34, 34, 34);
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+}
+
+#DmMenu .separator {    
+	padding: 0px;
+    margin: 5px;
+}
+
+#DmMenu *:hover {
+	background-color: rgb(0, 0, 0);
+}
+.dmElement h3 {    
+	border-bottom: 1px solid black;
+    padding: 10px 0px;
+    margin: 0px;
+}
+
+#monsterEditor {
+	max-height: 45vh;
+	overflow-y: auto;
+	border-left: 1px solid black;
+	padding-left: 20px;
+}
+#monsterEditor table {
+	width: 100%;
+	margin: auto;    
+	border-spacing: 10px 3px;
+}
+#monsterEditor .abilities * {
+	text-align: center;
+}
+#monsterEditor .abilities input {
+	width: 100%;
+}
+
+#monsterEditor * {
+    margin: 3px 0px;
+}
+#monsterEditor hr {
+    width: 90%;
+	margin: 10px 5%;
+}
+#monsterPictureInput {
+	display: none;
+}
+#monsterPictureButton {
+	-webkit-appearance: button;
+}
+#monsterEditor table:not(.abilities) td:nth-child(even) input {
+    width: 100%;
+}
+#monsterEditor table:not(.abilities) td:nth-child(odd) {
+    width: 30%;
+}
+#monsterEditor .monsterTextAreas {
+	margin: 5px 5%;
+	width: 90%;
+}
+#monsterEditor .monsterTextAreas textarea {
+	height: 75px;
+}
+#MonsterDatabaseList .newMonster {
+	font-weight: bold;
+}

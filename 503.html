@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Under Construction</title>
+		<meta charset="UTF-8">
+		<style>
+			/* width */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+			
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #f1f1f1; 
+			}
+			
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #888; 
+			}
+			
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555; 
+			}
+			body {
+				user-select: none;
+			}
+			#holder {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+			}
+			.text {
+				text-align: center;
+				width: 100px;
+				top: 20px;
+				animation: fly 3s;
+				color: rgba(0, 0, 0, 0);
+				position: absolute;
+			}
+			img {
+				-webkit-user-drag: none;
+				max-width: 540px;
+				width: 100%;
+				height: auto;
+			}
+
+			@keyframes fly {
+				from {
+					color: rgba(0, 0, 0, 1);
+					top: 20px;
+				}
+				to {
+					color:rgba(0, 0, 0, 0);
+					top: 0px;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="holder">
+			<h1>The site is currently under construction!</h1>
+			<img src="underConstruction.gif">
+			<p>Contact Luminight for details</p>
+		</div>
+	</body>
+	<script>
+	
+
+		var texts = ["ded", "update when?", "pls let me in","._.", "senpai notice me", "could you not?", "I was here first!", "what are you doing?",
+		 "I feel alone", "Will you finally finish ...", "Could you hold my hand?", "What should I do now?", "I'm bored", "Is this a bug?", "Is this a jojo reference?",
+		 "Are you done yet?", "Yes daddy!", "Hi random user, I'm dad", "Aqua best girl", "Eris pads her chest", "I don't know why I even wrote these", "Are these funny?",
+		 "Why are you even here?", "Want sum dnd?", "8.5/10 qt trap", "It's a secret to everyone", "1-up"];
+
+		function SpawnText() {
+
+			var holder = document.createElement("div");
+			var text = document.createElement("div");
+
+			text.innerHTML = texts[Math.floor(Math.random() * texts.length)];
+			text.classList.add("text");
+			holder.appendChild(text);
+			
+			holder.style.position = "absolute";
+			holder.style.left = `${Math.floor(Math.random() * Math.max(window.innerWidth - 110, 50) + 50)}px`;
+			holder.style.top = `${Math.floor(Math.random() * Math.max(window.innerHeight - 110, 50) + 50)}px`;
+
+			document.body.appendChild(holder);
+			
+			setTimeout(() => {
+				holder.remove();
+			}, 3500);
+
+			var seconds = Math.floor(Math.random() * 10 + 10);
+			setTimeout(SpawnText, seconds * 1000);
+		}
+
+		SpawnText();
+	
+	</script>
+</html>
